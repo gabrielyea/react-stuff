@@ -47,4 +47,53 @@ const useThemify = () => {
 
 export default useThemify;
 ```
-- Thats it! to use it you import it where you need it and set the themes by name!
+- Import it where you need it and set the themes by name!
+```JavaScript
+import useThemify from "../components/themify/useThemify";
+const Home = () => {
+  const [setTheme] = useThemify('green'); // default theme
+  ...
+  ...
+  ```
+  ```html
+  ...
+  ...
+  <button
+    onClick={() => setTheme('green')}
+  >
+    Set green theme
+  </button>
+  <button
+    onClick={() => setTheme('gold')}
+  >
+    Set gold theme
+  </button>
+```
+- Remeber to use the variable names for the attributes you wish to style!
+```css
+.options button {
+  font-size: 3rem;
+  padding: 0.5em;
+  border: none;
+  border-radius: 10px;
+  color: var(--color1); /* <--- like this! */
+  background-color: var(--color3);  /* <--- like this! */
+}
+```
+- Thats it! Have fun!  You can check the example if something is not clear!
+
+## Author
+
+👤 *Gabriel Rendon*
+
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
+- Linkedin [Gabriel Rendon](https://www.linkedin.com/in/gabriel-rendon-paredes/)
+
+## 🤝 Contributing
+
+Feel free to request changes or open issues with your suggestions and ideas!
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!

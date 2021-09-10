@@ -31,4 +31,10 @@
   border-radius: 10px;
   color: var(--color1);
   background-color: var(--color3);
+  box-shadow: var(--color5) 4px 4px;
+}
+
+.options button:hover {
+  color: var(--color2);
+  background-color: var(--color4);
 }
