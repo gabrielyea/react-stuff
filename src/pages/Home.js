@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className={styles.mainContainer}>
       <header className={styles.head}>
-        I'M A HEADER
+        HELLO THERE
       </header>
       <Gallery />
       <div className={styles.options}>
