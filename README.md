@@ -1,5 +1,8 @@
 # About
-## `useThemify` is a super simple and fast way to set up different themes in your react app!
+## `useThemify` is a super simple and fast way to set up different themes in your react app, `Try it out!!`
+
+# Preview
+![image](./misc/themes.gif)
 
 # Set up
 - In your main style file (`index.css` in this example) set the name of the variables your are going to use inside `:root`. Remeber to set up default values!
