@@ -1,5 +1,5 @@
 # About
-## `useThemify` is a super simple and fast way to set up different themes in your react app, `Try it out!!`
+## `useThemify` is a super simple and fast way to set up different themes in your react app. :star:[try it out!](https://set-theme.netlify.app/):star:
 
 # Preview
 ![image](./misc/themes.gif)
