@@ -1,0 +1,40 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color2);
+  color: var(--color1);
+  margin: 5em;
+  border-radius: 25px;
+}
+
+.head {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: var(--color3);
+  border-radius: 25px;
+  font-size: 5rem;
+}
+
+.options {
+  display: flex;
+  gap: 2em;
+  flex-direction: row;
+  margin: 1em;
+}
+
+.options button {
+  font-size: 3rem;
+  padding: 0.5em;
+  border: none;
+  border-radius: 10px;
+  color: var(--color1);
+  background-color: var(--color3);
+  box-shadow: var(--color5) 4px 4px;
+}
+
+.options button:hover {
+  color: var(--color2);
+  background-color: var(--color4);
+}

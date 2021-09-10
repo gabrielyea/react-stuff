@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# About
+## `useThemify` is a super simple and fast way to set up different themes in your react app, `Try it out!!`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Preview
+![image](./misc/themes.gif)
 
-## Available Scripts
+# Set up
+- In your main style file (`index.css` in this example) set the name of the variables your are going to use inside `:root`. Remeber to set up default values!
+```css
+:root {
+    --color1: #f9e6cf;
+    --color2: #5ac54f;
+    --color3: #33984b;
+    --color4: #134c4c;
+    --color5: #0c2e44;
+}
+```
+- Create a themes.js file. Here you will write your themes: 
+```JavaScript
+  const themes = {
+    green: {
+      color1: '#f9e6cf',
+      color2: '#5ac54f',
+      color3: '#33984b',
+      color4: '#134c4c',
+      color5: '#0c2e44',
+    },
+    gold: {
+      color1: '#ffecd6',
+      color2: '#ffd4a3',
+      color3: '#ffaa5e',
+      color4: '#d08159',
+      color5: '#8d697a',
+    },
+  };
+```
+- Copy `useThemify` and import the themes!
+```JavaScript
+import { useCallback } from 'react';
+import themes from './themes';
 
-In the project directory, you can run:
+const useThemify = () => {
+  const applyTheme = useCallback((themeName) => {
+    Object.keys(themes[themeName]).forEach((att) => {
+      document.documentElement.style.setProperty(`--${att}`, themes[themeName][att]);
+    });
+  }, []);
+  return [applyTheme];
+};
 
-### `npm start`
+export default useThemify;
+```
+- Import it where you need it and set the themes by name!
+```JavaScript
+import useThemify from "../components/themify/useThemify";
+const Home = () => {
+  const [setTheme] = useThemify('green'); // default theme
+  ...
+  ...
+  ```
+  ```html
+  ...
+  ...
+  <button
+    onClick={() => setTheme('green')}
+  >
+    Set green theme
+  </button>
+  <button
+    onClick={() => setTheme('gold')}
+  >
+    Set gold theme
+  </button>
+```
+- Remeber to use the variable names for the attributes you wish to style!
+```css
+.options button {
+  font-size: 3rem;
+  padding: 0.5em;
+  border: none;
+  border-radius: 10px;
+  color: var(--color1); /* <--- like this! */
+  background-color: var(--color3);  /* <--- like this! */
+}
+```
+- Thats it! Have fun!  You can check the example if something is not clear!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Author
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+👤 *Gabriel Rendon*
 
-### `npm test`
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
+- Linkedin [Gabriel Rendon](https://www.linkedin.com/in/gabriel-rendon-paredes/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🤝 Contributing
 
-### `npm run build`
+Feel free to request changes or open issues with your suggestions and ideas!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Show your support
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
